@@ -4873,7 +4873,7 @@ ul {
 }
 
 /* When announcement bar is present, navbar needs offset */
-body:has(.announcement-bar) .navbar {
+body.has-announcement .navbar {
     top: 38px;
 }
 
@@ -5657,6 +5657,7 @@ body:has(.announcement-bar) .navbar {
     margin: auto 1.5rem 1.5rem;
     width: calc(100% - 3rem);
 }
+
 
 
 

@@ -1,13 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Fix navbar offset when announcement bar is closed
-    document.addEventListener('click', (e) => {
-        if (e.target.closest('#closeAnnouncement') || e.target.closest('.announcement-close')) {
-            const navbar = document.querySelector('.navbar');
-            if (navbar) navbar.style.top = '0';
+    // Announcement bar offset fix
+    const announcementBar = document.getElementById('announcementBar');
+    if (announcementBar) {
+        document.body.classList.add('has-announcement');
+        const closeBtn = document.getElementById('closeAnnouncement');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function() {
+                announcementBar.remove();
+                document.body.classList.remove('has-announcement');
+            });
         }
-    });
-
-    // Mobile Navigation Toggle
+    }
+        // Mobile Navigation Toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
     
@@ -177,3 +181,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
