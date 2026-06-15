@@ -2394,6 +2394,13 @@ ul {
 }
 
 @media (max-width: 768px) {
+    .navbar {
+        padding: 0.8rem 0;
+    }
+    .navbar.scrolled {
+        padding: 0.5rem 0;
+    }
+    
     .nav-container { padding: 0 1rem; }
     .logo { width: 200px; }
     .nav-logo { transform: scale(1.6); }
