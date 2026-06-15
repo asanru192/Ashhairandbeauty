@@ -25,17 +25,10 @@ filesToCopy.forEach(file => {
     }
 });
 
-// Copy assets
+// Copy assets recursively
 const assetsSrcDir = path.join(__dirname, 'assets');
 if (fs.existsSync(assetsSrcDir)) {
-    const assets = fs.readdirSync(assetsSrcDir);
-    assets.forEach(asset => {
-        const src = path.join(assetsSrcDir, asset);
-        const dest = path.join(distAssetsDir, asset);
-        if (fs.lstatSync(src).isFile()) {
-            fs.copyFileSync(src, dest);
-        }
-    });
+    fs.cpSync(assetsSrcDir, distAssetsDir, { recursive: true });
     console.log(`Copied assets to dist/assets/`);
 }
 console.log('Build completed successfully.');
