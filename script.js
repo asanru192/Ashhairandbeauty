@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+﻿document.addEventListener('DOMContentLoaded', () => {
     // Announcement bar offset fix
     const announcementBar = document.getElementById('announcementBar');
     if (announcementBar) {
@@ -36,6 +36,15 @@ document.addEventListener('DOMContentLoaded', () => {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
+        }
+        // Remove navbar top offset once user scrolls past announcement bar
+        const bar = document.getElementById('announcementBar');
+        if (bar) {
+            if (window.scrollY >= bar.offsetHeight) {
+                document.body.classList.remove('has-announcement');
+            } else {
+                document.body.classList.add('has-announcement');
+            }
         }
     });
 
@@ -181,4 +190,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
 
