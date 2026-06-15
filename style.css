@@ -4866,7 +4866,7 @@ ul {
 }
 
 /* When announcement bar is present, navbar needs offset */
-body:has(.announcement-bar:not([style*="display: none"])) .navbar {
+body:has(.announcement-bar) .navbar {
     top: 38px;
 }
 
