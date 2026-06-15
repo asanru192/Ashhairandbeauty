@@ -268,7 +268,7 @@ ul {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 2.5rem;
+    gap: 1.5rem;
 }
 
 .nav-links a:not(.btn) {
@@ -748,7 +748,7 @@ ul {
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    gap: 2.5rem;
+    gap: 1.5rem;
     margin-bottom: 4rem;
 }
 
@@ -1125,7 +1125,7 @@ ul {
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2.5rem;
+    gap: 1.5rem;
     margin-bottom: 4rem;
 }
 
@@ -1371,8 +1371,8 @@ ul {
 .reviews-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2.5rem;
-    margin-bottom: 4.5rem;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
     position: relative;
     z-index: 2;
 }
@@ -1611,7 +1611,7 @@ ul {
 .contact-info {
     display: flex;
     flex-direction: column;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .info-item {
@@ -1724,7 +1724,7 @@ ul {
     display: flex;
     align-items: center;
     gap: 1.2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .location-icon {
@@ -1968,7 +1968,7 @@ ul {
 }
 
 .footer-inner {
-    padding: 5rem 0 2rem;
+    padding: 3rem 0 1rem;
     position: relative;
     z-index: 2;
 }
@@ -1977,7 +1977,7 @@ ul {
     display: grid;
     grid-template-columns: 1.6fr 1fr 1fr;
     gap: 4rem;
-    margin-bottom: 4.5rem;
+    margin-bottom: 2rem;
     align-items: start;
 }
 
@@ -2243,7 +2243,7 @@ ul {
         rgba(255,255,255,0.06) 80%,
         transparent 100%
     );
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 /* Bottom bar */
@@ -2253,7 +2253,7 @@ ul {
     align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
-    padding-top: 1.5rem;
+    padding-top: 1rem;
     border-top: 1px solid rgba(255,255,255,0.04);
     color: rgba(142, 142, 147, 0.6);
     font-size: 0.82rem;
@@ -2411,12 +2411,12 @@ ul {
     
     .hero-actions {
         flex-direction: column;
-        gap: 2.5rem;
+        gap: 1.5rem;
     }
     
     .footer-container {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
+        gap: 1.5rem;
     }
 
     .footer-bottom {
@@ -2880,7 +2880,7 @@ ul {
 
 .home-service-price-block {
     margin-top: auto;
-    padding-top: 1.5rem;
+    padding-top: 1rem;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     display: flex;
     justify-content: space-between;
@@ -4527,7 +4527,7 @@ ul {
     color: var(--color-text-light);
     font-size: 0.95rem;
     line-height: 1.65;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 /* Form Inputs */
@@ -5657,6 +5657,7 @@ body:has(.announcement-bar) .navbar {
     margin: auto 1.5rem 1.5rem;
     width: calc(100% - 3rem);
 }
+
 
 
 
