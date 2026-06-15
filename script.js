@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Fix navbar offset when announcement bar is closed
+    document.addEventListener('click', (e) => {
+        if (e.target.closest('#closeAnnouncement') || e.target.closest('.announcement-close')) {
+            const navbar = document.querySelector('.navbar');
+            if (navbar) navbar.style.top = '0';
+        }
+    });
+
     // Mobile Navigation Toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
