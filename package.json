@@ -1,0 +1,10 @@
+{
+  "name": "ash-hair-beauty",
+  "version": "1.0.0",
+  "description": "Ash Hair and Beauty Salon website",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
