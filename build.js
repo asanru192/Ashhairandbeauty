@@ -12,9 +12,10 @@ if (!fs.existsSync(distAssetsDir)) {
     fs.mkdirSync(distAssetsDir, { recursive: true });
 }
 
-// Copy all HTML files, styles, and scripts in root
+// Copy all HTML files, styles, scripts, sitemap and robots
 const filesToCopy = fs.readdirSync(__dirname).filter(file => {
-    return file.endsWith('.html') || file === 'style.css' || file === 'script.js';
+    return file.endsWith('.html') || file === 'style.css' || file === 'script.js'
+        || file === 'sitemap.xml' || file === 'robots.txt';
 });
 filesToCopy.forEach(file => {
     const src = path.join(__dirname, file);
@@ -32,3 +33,4 @@ if (fs.existsSync(assetsSrcDir)) {
     console.log(`Copied assets to dist/assets/`);
 }
 console.log('Build completed successfully.');
+
