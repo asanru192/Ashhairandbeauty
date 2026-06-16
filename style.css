@@ -5664,3 +5664,17 @@ body.has-announcement .navbar {
 
 
 
+
+/* Contact form feedback states */
+.form-feedback {
+    min-height: 1.5rem;
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+    font-weight: 500;
+}
+.form-feedback--success {
+    color: #4caf79;
+}
+.form-feedback--error {
+    color: #e05c5c;
+}
