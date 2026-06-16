@@ -125,17 +125,17 @@
                                 <span class="hours-day">Wednesday</span>
                                 <span class="hours-time">9:00 am &ndash; 6:00 pm</span>
                             </li>
-                            <li class="hours-row">
+                            <li class="hours-row hours-late">
                                 <span class="hours-day">Thursday</span>
-                                <span class="hours-time">9:00 am &ndash; 6:00 pm</span>
+                                <span class="hours-time">9:00 am &ndash; 8:00 pm <em class="hours-late-badge">Late Night</em></span>
                             </li>
                             <li class="hours-row hours-late">
                                 <span class="hours-day">Friday</span>
                                 <span class="hours-time">9:00 am &ndash; 8:00 pm <em class="hours-late-badge">Late Night</em></span>
                             </li>
-                            <li class="hours-row hours-late">
+                            <li class="hours-row">
                                 <span class="hours-day">Saturday</span>
-                                <span class="hours-time">9:00 am &ndash; 8:00 pm <em class="hours-late-badge">Late Night</em></span>
+                                <span class="hours-time">9:00 am &ndash; 6:00 pm</span>
                             </li>
                             <li class="hours-row">
                                 <span class="hours-day">Sunday</span>
@@ -194,18 +194,21 @@
                     </div>
                     <p class="contact-form-intro">Have a question about a treatment or need help planning your look? Ash will personally respond shortly.</p>
 
-                    <form class="contact-form" id="contactForm">
+                    <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="effef8d0-5f00-4abe-a17d-dab3ed571329">
+                        <input type="hidden" name="subject" value="New Inquiry from Ash Hair &amp; Beauty Website">
+                        <input type="checkbox" name="botcheck" style="display:none">
                         <div class="form-group">
                             <label for="formName" class="form-label">Full Name</label>
-                            <input type="text" id="formName" class="form-input" placeholder="Your name" required>
+                            <input type="text" id="formName" name="name" class="form-input" placeholder="Your name" required>
                         </div>
                         <div class="form-group">
                             <label for="formEmail" class="form-label">Email Address</label>
-                            <input type="email" id="formEmail" class="form-input" placeholder="Your email address" required>
+                            <input type="email" id="formEmail" name="email" class="form-input" placeholder="Your email address" required>
                         </div>
                         <div class="form-group">
                             <label for="formMessage" class="form-label">Your Message</label>
-                            <textarea id="formMessage" class="form-textarea" placeholder="How can we help you?" required></textarea>
+                            <textarea id="formMessage" name="message" class="form-textarea" placeholder="How can we help you?" required></textarea>
                         </div>
                         <div id="formFeedback" class="form-feedback"></div>
                         <div class="contact-form-footer">
@@ -235,7 +238,7 @@
                         </a>
                     </div>
                     <p class="footer-tagline">Fall in love with your hair again.</p>
-                    <p>Your destination for bespoke haircuts, vibrant colours, and sustainable vegan beauty â€” crafted with 18 years of expert care.</p>
+                    <p>Your destination for bespoke haircuts, vibrant colours, and sustainable vegan beauty â€” crafted with 19+ years of expert care.</p>
                     <div class="social-links">
                         <a href="https://www.facebook.com/profile.php?id=100083275604270" target="_blank" aria-label="Facebook">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path></svg>
@@ -324,10 +327,43 @@
 
     <script src="script.js"></script>
     <script>
-        document.getElementById('closeAnnouncement')?.addEventListener('click', function() {
-            document.getElementById('announcementBar').style.display = 'none';
+        document.getElementById("contactForm").addEventListener("submit", async function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const feedback = document.getElementById("formFeedback");
+            const btn = form.querySelector("button[type=submit]");
+            btn.disabled = true;
+            btn.textContent = "Sending...";
+            feedback.innerHTML = "";
+            feedback.className = "form-feedback";
+            try {
+                const res = await fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    body: new FormData(form)
+                });
+                const data = await res.json();
+                if (data.success) {
+                    feedback.innerHTML = "&#10003; Thank you! Ash will be in touch shortly.";
+                    feedback.classList.add("form-feedback--success");
+                    form.reset();
+                } else {
+                    throw new Error(data.message);
+                }
+            } catch (err) {
+                feedback.innerHTML = "&#10007; Something went wrong. Please try again or call us.";
+                feedback.classList.add("form-feedback--error");
+            }
+            btn.disabled = false;
+            btn.innerHTML = `Send Message <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`;
         });
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
 
