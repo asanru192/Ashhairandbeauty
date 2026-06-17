@@ -2347,7 +2347,6 @@ ul {
         background-color: var(--color-primary);
     }
 }
-}
 
 @media (max-width: 992px) {
     .nav-links {
