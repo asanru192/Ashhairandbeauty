@@ -2261,33 +2261,19 @@ ul {
     font-size: 0.82rem;
 }
 
-.footer-bottom-links {
-    display: flex;
-    gap: 1.5rem;
+.footer-bottom-powered {
+    font-size: 0.82rem;
+    color: rgba(142, 142, 147, 0.6);
 }
 
-.footer-bottom-links a {
-    color: rgba(142, 142, 147, 0.6);
-    font-size: 0.82rem;
+.footer-bottom-powered a {
+    color: rgba(142, 142, 147, 0.8);
+    text-decoration: underline;
     transition: color 0.25s ease;
 }
 
-.footer-bottom-links a:hover {
+.footer-bottom-powered a:hover {
     color: var(--color-primary);
-}
-
-.footer-bottom-badge {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.78rem;
-    color: rgba(142, 142, 147, 0.45);
-}
-
-.footer-bottom-badge svg {
-    width: 12px;
-    height: 12px;
-    color: rgba(225, 179, 51, 0.5);
 }
 
 /* ====== ANIMATIONS ====== */
@@ -2437,9 +2423,7 @@ ul {
         gap: 0.8rem;
     }
 
-    .footer-bottom-links {
-        justify-content: center;
-    }
+
 
     .gallery-grid {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
