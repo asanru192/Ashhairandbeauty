@@ -5523,9 +5523,8 @@ body.has-announcement .navbar {
 
 /* Products footer note */
 .products-footer-note {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
+    display: block;
+    text-align: center;
     font-size: 0.85rem;
     color: var(--color-text-light);
     background: rgba(255, 255, 255, 0.02);
@@ -5717,9 +5716,8 @@ body.has-announcement .navbar {
 
 /* Products footer note */
 .products-footer-note {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
+    display: block;
+    text-align: center;
     font-size: 0.85rem;
     color: var(--color-text-light);
     background: rgba(255, 255, 255, 0.02);
