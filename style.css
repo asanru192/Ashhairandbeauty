@@ -2386,7 +2386,6 @@ ul {
         width: 260px;
         height: 260px;
         margin: 0 auto;
-        overflow: hidden;
     }
 
     /* Scale orbit rings to fit within the smaller wrapper */
