@@ -1,5 +1,17 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Mobile Navigation Toggle
+﻿document.addEventListener('DOMContentLoaded', () => {
+    // Announcement bar offset fix
+    const announcementBar = document.getElementById('announcementBar');
+    if (announcementBar) {
+        document.body.classList.add('has-announcement');
+        const closeBtn = document.getElementById('closeAnnouncement');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function() {
+                announcementBar.remove();
+                document.body.classList.remove('has-announcement');
+            });
+        }
+    }
+        // Mobile Navigation Toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
     
@@ -24,6 +36,15 @@ document.addEventListener('DOMContentLoaded', () => {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
+        }
+        // Remove navbar top offset once user scrolls past announcement bar
+        const bar = document.getElementById('announcementBar');
+        if (bar) {
+            if (window.scrollY >= bar.offsetHeight) {
+                document.body.classList.remove('has-announcement');
+            } else {
+                document.body.classList.add('has-announcement');
+            }
         }
     });
 
@@ -169,3 +190,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+
